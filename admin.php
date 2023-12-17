@@ -16,27 +16,36 @@ require_once 'config/db.php'
 </head>
 
 <body style="font-family: 'Inter', sans-serif;">
+	<a href="index.php" class="btn_back" title="Go to the homepage"><i class='bx bx-arrow-back'></i></a>
 	<h1 class="title">Danh sách sản phẩm</h1>
-	<button class="btn_add">
-		<i class='bx bx-plus'></i>
-		<p>Thêm sản phẩm</p>
-	</button>
-	<table>
-		<thead>
-			<tr>
-				<th>ID</th>
-				<th>Tên sản phẩm</th>
-				<th>Ảnh</th>
-				<th>Giá</th>
-				<th></th>
-			</tr>
-		</thead>
-		<tbody>
-			<?php
-			require_once "action/admin_list.php"
-			?>
-		</tbody>
-	</table>
+	<div class="them_san_pham">
+		<a href="admin.php?page_layout=add" class="btn_add">
+			<i class='bx bx-plus'></i>
+			<p>Thêm sản phẩm</p>
+		</a>
+	</div>
+	<?php
+	require 'action/admin_list.php';
+	if (isset($_GET['page_layout'])) {
+		switch ($_GET['page_layout']) {
+			case 'add':
+				require 'action/add.php';
+				break;
+
+			case 'delete':
+				require_once 'action/delete.php';
+				break;
+
+			case 'update':
+				require_once 'action/update.php';
+				break;
+
+			default:
+				require_once 'action/admin_list.php';
+				break;
+		}
+	}
+	?>
 </body>
 
 </html>

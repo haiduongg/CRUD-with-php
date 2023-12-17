@@ -8,7 +8,7 @@ $query = mysqli_query($connect, $sql);
 	while ($row = mysqli_fetch_assoc($query)) {
 	?>
 		<div class="box-san-pham">
-			<img src="<?php $row['image'] ?>" alt="<?php echo $row['image'] ?>" class="anh-san-pham" />
+			<img src="img/<?php echo $row['image'] ?>" alt="<?php echo $row['image'] ?>" class="anh-san-pham" />
 			<div class="ten-san-pham"><?php echo $row['product_name'] ?></div>
 			<p class="gia">
 				<?php echo number_format($row['price'], 0, '', ',');
