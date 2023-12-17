@@ -1,0 +1,27 @@
+<?php
+	if (isset($_GET['page_layout'])) {
+		switch ($_GET['page_layout']) {
+			case 'list':
+				require_once 'action/list.php';
+				break;
+
+			case 'add':
+				require_once 'action/add.php';
+				break;
+
+			case 'delete':
+				require_once 'action/delete.php';
+				break;
+
+			case 'update':
+				require_once 'action/update.php';
+				break;
+
+			default:
+				require_once 'action/list.php';
+				break;
+		}
+	} else {
+		require_once 'action/list.php';
+	}
+	?>
