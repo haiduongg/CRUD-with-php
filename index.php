@@ -21,15 +21,15 @@ require_once 'config/db.php'
 		</div>
 		<div class="menu">
 			<div>
-				<a href="#">Trang chủ</a>
+				<a href="index.php">Trang chủ</a>
 				<a href="#">Giới thiệu</a>
 				<a href="#">Dịch vụ</a>
 				<a href="#">Sản phẩm</a>
 				<a href="#">Liên hệ</a>
 			</div>
 			<div>
-				<a href="#">Đăng ký</a>
-				<a href="#">Đăng nhập</a>
+				<a href="signup.php">Đăng ký</a>
+				<a href="login.php">Đăng nhập</a>
 			</div>
 		</div>
 		<div class="clear"></div>

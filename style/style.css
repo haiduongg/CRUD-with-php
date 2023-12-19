@@ -134,6 +134,7 @@ body {
   display: grid;
   grid-template-columns: 330px 330px 330px;
   gap: 50px;
+  padding-bottom: 50px;
 }
 
 .box-san-pham {

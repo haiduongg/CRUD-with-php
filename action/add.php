@@ -4,14 +4,12 @@ if (isset($_POST['sbm'])) {
 	$image = $_FILES['product_image']['name'];
 	$image_tmp = $_FILES['product_image']['tmp_name'];
 	$prd_price = $_POST['product_price'];
-
 	$sql = "INSERT INTO `products`(`product_name`, `image`, `price`) VALUES ('$prd_name','$image',$prd_price)";
 	$query = mysqli_query($connect, $sql);
 	move_uploaded_file($image_tmp, 'img/' . $image);
-	header('location: admin.php');
+	echo "<script>window.location.href='admin.php'</script>";
 }
 ?>
-
 <div id="myModal" class="modal">
 	<div class="modal-content">
 		<a href="admin.php"><span class="close">&times;</span></a>
@@ -29,7 +27,9 @@ if (isset($_POST['sbm'])) {
 				<label for="product_price">Giá bán</label></br>
 				<input type="number" name="product_price" placeholder='Example: 15000000' required />
 			</div>
-			<div class="form-group center"><button name="sbm" type="submit" class="btn_them">Thêm</button></div>
+			<div class="form-group center">
+				<a href="../admin.php"><button name="sbm" type="submit" class="btn_them">Thêm</button></a>
+			</div>
 		</form>
 	</div>
 </div>

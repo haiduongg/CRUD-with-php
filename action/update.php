@@ -3,22 +3,18 @@ $id = $_GET['id'];
 $sql_up = "SELECT * FROM `products` WHERE product_id = $id";
 $query_up = mysqli_query($connect, $sql_up);
 $row_up = mysqli_fetch_assoc($query_up);
-
 if (isset($_POST['sbm'])) {
 	$prd_name = $_POST['product_name'];
-
 	if ($_FILES['product_image']['size'] > 0) {
 		$image = $_FILES['product_image']['name'];
 		move_uploaded_file($_FILES['product_image']['tmp_name'], 'img/' . $image);
 	} else {
 		$image = $row_up['image'];
 	}
-
 	$prd_price = $_POST['product_price'];
-
 	$sql = "UPDATE products SET product_name = '$prd_name', image = '$image', price = $prd_price WHERE product_id = $id";
 	$query = mysqli_query($connect, $sql);
-	header('location: admin.php');
+	echo "<script>window.location.href='admin.php'</script>";
 }
 ?>
 
