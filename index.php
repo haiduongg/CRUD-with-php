@@ -1,5 +1,5 @@
 <?php
-require_once 'config/db.php'
+require_once 'config/db.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,18 +38,17 @@ require_once 'config/db.php'
 			<ul>
 				<li><a href="#">Điện thoại</a></li>
 				<ul>
-					<li><a href="#">iPhone</a></li>
-					<li><a href="#">Xiaomi</a></li>
-					<li><a href="#">Oppo</a></li>
-					<li><a href="#">Asus</a></li>
-					<li><a href="#">Realme</a></li>
+					<li><a href="?filter=iphone">iPhone</a></li>
+					<li><a href="?filter=xiaomi">Xiaomi</a></li>
+					<li><a href="?filter=oppo">Oppo</a></li>
+					<li><a href="?filter=realme">Realme</a></li>
 				</ul>
-				<li><a href="#">Tivi</a></li>
-				<li><a href="#">Laptop</a></li>
+				<li><a href="?filter=tivi">Tivi</a></li>
+				<li><a href="?filter=laptop">Laptop</a></li>
 				<ul>
-					<li><a href="#">Macbook</a></li>
-					<li><a href="#">Asus</a></li>
-					<li><a href="#">HP</a></li>
+					<li><a href="?filter=macbook">Macbook</a></li>
+					<li><a href="?filter=asus">Asus</a></li>
+					<li><a href="?filter=lenovo">Lenovo</a></li>
 				</ul>
 			</ul>
 		</div>

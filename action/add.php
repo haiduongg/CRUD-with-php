@@ -28,7 +28,7 @@ if (isset($_POST['sbm'])) {
 				<input type="number" name="product_price" placeholder='Example: 15000000' required />
 			</div>
 			<div class="form-group center">
-				<a href="../admin.php"><button name="sbm" type="submit" class="btn_them">Thêm</button></a>
+				<button name="sbm" type="submit" class="btn_them">Thêm</button>
 			</div>
 		</form>
 	</div>

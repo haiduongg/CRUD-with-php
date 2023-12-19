@@ -1,3 +1,16 @@
+<?php
+require_once('config/db.php');
+
+if (isset($_POST['sbm'])) {
+	$fullname = $_POST['fullname'];
+	$username = $_POST['username'];
+	$password = $_POST['password'];
+	$sql = "INSERT INTO `accounts`(`fullname`, `username`, `password`, `role`) VALUES ('$fullname','$username','$password','user')";
+	$query = mysqli_query($connect, $sql);
+	echo "<script>alert('Bạn đã tạo tài khoản thành công!')</script>";
+	echo "<script>window.location.href='index.php'</script>";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +27,7 @@
 
 <body style="font-family: 'Inter', sans-serif;">
 	<div class="container">
-		<form id="signup-form">
+		<form method="POST" enctype="multipart/form-data">
 			<h2>Đăng ký tài khoản</h2>
 			<div class="form-group">
 				<label for="fullname">Họ và tên:</label>
@@ -24,17 +37,24 @@
 				<label for="username">Tên đăng nhập:</label>
 				<input type="text" id="username" name="username" required>
 			</div>
-			<div class="form-group">
+			<div class="form-group" style="position: relative">
 				<label for="password">Mật khẩu:</label>
 				<input type="password" id="password" name="password" required>
+				<div style="position: absolute; top: 50%; right: 10px; font-size: 25px; cursor: pointer;" onclick="show()"><i class='bx bx-show'></i></div>
 			</div>
-			<div class="form-group">
-				<label for="confirm-password">Xác nhận mật khẩu:</label>
-				<input type="password" id="confirm-password" name="confirm-password" required>
-			</div>
-			<button type="submit">Đăng ký</button>
+			<button type="submit" name="sbm">Đăng ký</button>
+			<a href="login.php" style="margin-left: 30px;">Đăng nhập</a>
 		</form>
 	</div>
+	<script>
+		function show() {
+			if (document.getElementById('password').getAttribute('type') == 'password') {
+				document.getElementById('password').setAttribute('type', 'text')
+			} else {
+				document.getElementById('password').setAttribute('type', 'password')
+			}
+		}
+	</script>
 </body>
 
 </html>

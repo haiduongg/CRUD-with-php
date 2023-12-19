@@ -1,6 +1,12 @@
 <?php
-$sql = "SELECT * FROM products";
-$query = mysqli_query($connect, $sql);
+if (isset($_GET['filter'])) {
+	$filter = $_GET['filter'];
+	$sql = "SELECT * FROM products WHERE product_name LIKE '%$filter%'";
+	$query = mysqli_query($connect, $sql);
+} else {
+	$sql = "SELECT * FROM products";
+	$query = mysqli_query($connect, $sql);
+}
 ?>
 
 <div class="danh-sach-san-pham">
