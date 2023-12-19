@@ -20,7 +20,7 @@ $query = mysqli_query($connect, $sql);
 			while ($row = mysqli_fetch_assoc($query)) {
 			?>
 				<tr>
-					<td style="text-align: center; font-weight: bold;"><?php echo $row['product_id'] ?></td>
+					<td style="text-align: center; font-weight: bold">PRD<?php echo $row['product_id'] ?></td>
 					<td><?php echo $row['product_name'] ?></td>
 					<td style="padding-block: 10px;">
 						<img style='display: block; height: 200px; margin: 0 auto;;' src="img/<?php echo $row['image'] ?>" alt="<?php echo $row['image'] ?>">

@@ -10,6 +10,7 @@ require_once 'config/db.php';
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 	<link rel="stylesheet" href="style/style.css" />
 	<title>JK Shop - Điện thoại, laptop, đồ dùng công nghệ</title>
 </head>
@@ -30,6 +31,7 @@ require_once 'config/db.php';
 			<div>
 				<a href="signup.php">Đăng ký</a>
 				<a href="login.php">Đăng nhập</a>
+				<a href="admin.php" style="width: 50px; font-size: 20px; text-align: center; vertical-align: middle;" title="Đi tới quản lý sản phẩm"><i class='bx bxs-user-circle'></i></a>
 			</div>
 		</div>
 		<div class="clear"></div>
